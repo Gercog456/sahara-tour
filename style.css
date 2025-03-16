@@ -1,0 +1,187 @@
+*{
+    font-family:'Gill Sans', 'Gill Sans MT', "Calibri", 'Trebuchet MS', sans-serif;
+    box-sizing:border-box;
+}
+body{
+    background-color: rgb(227, 228, 220);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+.main{
+    display: flex;
+    flex-flow: row wrap-reverse;
+    justify-content: stretch;
+    align-items: center;
+}
+.info,
+.foto{
+    flex-basis: 50%;
+    min-width: 450px;
+    padding: 8%;
+    flex-grow: 1;
+    background-color: rgb(227, 228, 220);
+}
+.coll{
+    font-size: 4em;
+    font-weight: bold;
+}
+.text{
+    margin-block: 8%;
+    line-height: 1.8em;
+    font-size: 1.25em;
+}
+button{
+    padding: 1rem 2rem;
+    border: solid 2px rgb(255, 124, 63);
+    border-radius: 28px;
+    font-weight: 900;
+    font-size: 1.2rem;
+    background-color: rgb(255, 124, 63);
+    color: rgb(227, 228, 220);
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgb(227, 228, 220);
+    border: black solid 2px;
+    color: black;
+    transition-duration: 0.2s;
+}
+.foto{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    height: 50vw;
+    padding: 2%;
+}
+.foto *{
+    border: 10px rgb(255, 124, 63) solid;
+    border-radius: 50%;
+    z-index: 20;
+}
+.curcle1{
+    background-image: url(peizazh.jpg);
+    background-size: cover;
+    border: none;
+    width: 400%;
+    height: 400%;
+    background-position: 60%;
+    grid-column-start: 3;
+    grid-row-start: 3;
+    place-self: center;
+    z-index: 10;
+
+    animation-name: curcle1-anim;
+    animation-duration: 5s;
+}
+@keyframes curcle1-anim{
+    from{
+        rotate: 180deg;
+        opacity: 0;
+        transform: translate(-100px);
+    }
+}
+.curcle2{
+    background-image: url(werbluds.jpg);
+    width: 200%;
+    height: 200%;
+    background-size: cover;
+    background-position: 60%;
+    grid-column-start: 2;
+    grid-row-start: 4;
+    place-self: start end;
+
+    animation-name: curcle2-anim;
+    animation-duration: 3s;
+}
+@keyframes curcle2-anim{
+    from{
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    50%{
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.curcle3{
+    border:  30px rgb(255, 124, 63) solid;
+    width: 150%;
+    height: 150%;
+    grid-column-start: -3;
+    place-self: center end;
+
+    animation-name: curcle3-anim;
+    animation-duration: 2s;
+}
+@keyframes curcle3-anim{
+    from{
+        border: 0 rgb(255, 124, 63) solid;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    50%{
+        width: 200%;
+        height: 200%;
+    }
+}
+.curcle4{
+    border:  15px rgb(255, 124, 63) solid;
+    grid-column: 4/6;
+    grid-row: 4/6;
+    place-self: center;
+    width: 50%;
+    height: 50%;
+
+    animation-name: curcle4-anim;
+    animation-duration: 3s;
+}
+@keyframes curcle4-anim{
+    from{
+        transform: translateX(1000%);
+    }
+}
+.curcle5{
+    width: 45%;
+    height: 45%;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    place-self: center;
+
+    animation-name: curcle5-anim;
+    animation-duration: 3s;
+}
+@keyframes curcle5-anim{
+    from{
+        transform: translateY(-500%);
+    }
+    50%{
+        transform: translateY(200%);
+    }
+}
+.footer{
+    color: rgb(226, 194, 142);
+    background-color: rgb(46, 17, 1);
+    width: 100%;
+    text-align: center;
+    padding-block: 3em;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: rgb(226, 194, 142);
+}
+@media(max-width:900px) {
+    .foto{
+        height: 100vw;
+    }
+}
